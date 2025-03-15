@@ -1,0 +1,70 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "POST",
+        "url": "/entity/create"
+      },
+      "response": {
+        "status": 200,
+        "transformers": ["crud-response"],
+        "transformerParameters": {
+          "type": "ENTITY",
+          "operation": "CREATE"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/entity/get",
+		"queryParameters" : {
+		  "id" : {
+			"matches" : "^(.*)"
+		  }
+		}
+      },
+      "response": {
+        "status": 200,
+        "transformers": ["crud-response"],
+        "transformerParameters": {
+          "type": "ENTITY",
+          "operation": "GET"
+        }
+      }
+    },
+	{
+      "request": {
+        "method": "DELETE",
+        "urlPath": "/entity/delete",
+		"queryParameters" : {
+		  "id" : {
+			"matches" : "^(.*)"
+		  }
+		}
+      },
+      "response": {
+        "status": 200,
+        "transformers": ["crud-response"],
+        "transformerParameters": {
+          "type": "ENTITY",
+          "operation": "DELETE"
+        }
+      }
+    },
+	{
+      "request": {
+        "method": "GET",
+        "urlPath": "/entity/get-all"
+      },
+      "response": {
+        "status": 200,
+        "transformers": ["crud-response"],
+        "transformerParameters": {
+          "type": "ENTITY",
+          "operation": "GETALL"
+        }
+      }
+    }    
+  ]
+}
